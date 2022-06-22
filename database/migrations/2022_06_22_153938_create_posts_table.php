@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('posts', function (Blueprint $table) {
-            $table->uuid();
-            $table->uuid('user_id');
+            $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->text('caption');
             $table->timestampsTz();
 

@@ -14,9 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('follows', function (Blueprint $table) {
-            $table->uuid();
-            $table->uuid('user_id');
-            $table->uuidMorphs('followable');
+            $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->morphs('followable');
             $table->timestampsTz();
 
             $table->foreign('user_id')->references('id')->on('users');

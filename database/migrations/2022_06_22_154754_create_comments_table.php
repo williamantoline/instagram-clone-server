@@ -14,10 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('comments', function (Blueprint $table) {
-            $table->uuid();
+            $table->id();
             $table->string('comment');
-            $table->dropMorphs('commentable');
-            $table->timestampsTz()();
+            $table->morphs('commentable');
+            $table->timestampsTz();
         });
     }
 

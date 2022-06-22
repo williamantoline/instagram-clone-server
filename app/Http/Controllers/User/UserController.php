@@ -9,6 +9,13 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    public function test()
+    {
+        return response()->json([
+            'data' => 'ok'
+        ]);
+    }
+
     public function index(Request $request)
     {
         $users = User::all();
